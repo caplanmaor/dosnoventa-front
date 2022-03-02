@@ -18,7 +18,7 @@ function Admin() {
 
   const saveForm = () => {
     axios
-      .post("https://dosnoventa.herokuapp.com/createBike", {
+      .post("https://dosnoventa-back.herokuapp.com/createBike", {
         data: formData,
       })
       .then(function (res) {
@@ -36,7 +36,9 @@ function Admin() {
 
   useEffect(() => {
     const fetchData = async () => {
-      const response = await fetch("https://dosnoventa.herokuapp.com/bikes");
+      const response = await fetch(
+        "https://dosnoventa-back.herokuapp.com/bikes"
+      );
       const bikesData = await response.json();
       setData(bikesData);
     };
@@ -55,7 +57,7 @@ function Admin() {
 
   const deleteBike = () => {
     axios
-      .post("https://dosnoventa.herokuapp.com/deleteBike", {
+      .post("https://dosnoventa-back.herokuapp.com/deleteBike", {
         data: select,
       })
       .then(function (res) {

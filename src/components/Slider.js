@@ -5,7 +5,9 @@ function Slider() {
 
   useEffect(() => {
     const fetchData = async () => {
-      const response = await fetch("https://dosnoventa.herokuapp.com/bikes");
+      const response = await fetch(
+        "https://dosnoventa-back.herokuapp.com/bikes"
+      );
       const bikesData = await response.json();
       setData(bikesData);
     };
